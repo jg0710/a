@@ -1,1 +1,33 @@
-saf
+  );
+  if (colidiu) {
+    velocidadexBolinha *= -1;
+  }
+}
+
+function movimentaBot() {
+  velocidadeYBot = yBolinha - yBot - raqueteComprimento / 2 - 30;
+  yBot += velocidadeYBot;
+}
+
+function placar() {
+  stroke(255);
+  textAlign(CENTER);
+  textSize(16);
+  fill(color(255,140,0))
+  rect(150,10,40,20);
+  fill(255);
+  text(pontosPlayer, 170, 26);
+  fill(color(255,140,0))
+  rect(450,10,40,20);
+  fill(255);
+  text(pontosBot, 470, 26);
+}
+
+function marcaPonto() {
+  if (xBolinha > 585) {
+    pontosPlayer += 1;
+  }
+  if (xBolinha < 15) {
+    pontosBot += 1;
+  }
+}
